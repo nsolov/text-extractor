@@ -1,14 +1,17 @@
-Class NSolov.TextExtract.PDF Extends %RegisteredObject
+Class NSolov.TextExtract.PDF Extends NSolov.TextExtract.AbstractExtractor
 {
 
-Property Filename As %String;
-
-Method %OnNew(filename As %String) As %Status
+Method GetNumPages() As %Integer [ Language = python ]
 {
-    set ..Filename = filename
-    return $$$OK
+    from pypdf import PdfReader
+
+    pdf_reader = PdfReader(self.Filename)
+
+    return len(pdf_reader.pages)
 }
 
+/// Extract text from a page
+/// Use -1 to extract text from the whole document
 Method Extract(page As %Integer = -1) As %String [ Language = python ]
 {
     from pypdf import PdfReader
