@@ -53,5 +53,7 @@ USER>set pptx = ##class(NSolov.TextExtract.PDF).%New("/full/path/to/file.pptx")
 USER>set string = pptx.Extract(0)
 ```
 
+### Interoperability
+
 From Interoperability you can use Business Operation `NSolov.TextExtract.BusinessOperation` with request `NSolov.TextExtract.PDFRequest` for pdf and `NSolov.TextExtract.PPTXRequest` for pptx.
 The response is `Ens.StringContainer` object.
