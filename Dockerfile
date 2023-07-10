@@ -1,6 +1,14 @@
 ARG IMAGE=intersystemsdc/iris-community:latest
 FROM $IMAGE
 
+USER root
+
+RUN apt-get update && \
+    apt-get install -yq tesseract-ocr && \
+    apt-get install -yq poppler-utils
+
+USER ${ISC_PACKAGE_MGRUSER}
+
 WORKDIR /home/irisowner/dev
 
 ARG TESTS=0
