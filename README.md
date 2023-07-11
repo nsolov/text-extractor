@@ -33,7 +33,6 @@ To get the number of pages:
 
 ```
 USER>set pdf = ##class(NSolov.TextExtract.PDF).%New("/full/path/to/file.pdf")
-
 USER>set numpages = pdf.GetNumPages()
 ```
 
