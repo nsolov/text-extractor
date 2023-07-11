@@ -53,8 +53,9 @@ USER>set string = pdf.ExtractWithImages(0,"eng")
 Another option is to save each .pdf page as an image, and then extract the text from those images
 ```
 USER>set pdf = ##class(NSolov.TextExtract.PDF).%New("/full/path/to/file.pdf")
-USER>set string = pdf.ExtractWithImages(0,"eng")
+USER>set string = pdf.ExtractAsImages(0,"eng")
 ```
+(use `-1` as first argument to process whole document) 
 
 ### IMAGES
 
